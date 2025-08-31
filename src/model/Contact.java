@@ -1,12 +1,12 @@
 package model;
 
 public class Contact {
-    int id;
+    String id;
     String name;
     String phone;
     String email;
 
-    public Contact(int id, String name, String phone, String email) {
+    public Contact(String id, String name, String phone, String email) {
         this.id = id;
         this.name = name;
         this.phone = phone;
@@ -23,11 +23,11 @@ public class Contact {
                 '}';
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 

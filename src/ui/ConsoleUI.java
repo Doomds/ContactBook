@@ -9,13 +9,14 @@ public class ConsoleUI {
     ContactService contactService = new ContactService();
     Scanner scanner = new Scanner(System.in);
 
-
     public void mainMenu() {
         while (true) {
             System.out.println(
                     "1. Afficher les contacts\n" +
                     "2. Ajouter un contact\n" +
-                    "3. Quitter");
+                    "3. Supprimer un contact\n" +
+                    "4. Quitter"
+            );
 
             System.out.print("> ");
             int choice = scanner.nextInt();
@@ -24,7 +25,8 @@ public class ConsoleUI {
             switch (choice) {
                 case 1 -> displayContacts();
                 case 2 -> addContact();
-                case 3 ->  {
+                case 3 -> deleteContact();
+                case 4 ->  {
                     System.out.println("Au revoir!");
                     return;
                 }
@@ -33,9 +35,15 @@ public class ConsoleUI {
         }
     }
 
+    private void deleteContact() {
+        System.out.println("---------------------");
+        System.out.println("En construction");
+        System.out.println("---------------------");
+    }
+
     private void displayContacts() {
         System.out.println("---------------------");
-        for (Contact c : contactService.getContacts()) {
+        for (Contact c : contactService.listContacts()) {
             System.out.println(c);
         }
         System.out.println("---------------------");
@@ -56,4 +64,6 @@ public class ConsoleUI {
         System.out.println("Contact ajouté !");
         System.out.println("---------------------");
     }
+
+
 }

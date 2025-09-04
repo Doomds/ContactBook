@@ -13,7 +13,12 @@ public class ContactService {
         this.contacts.add(c);
     }
 
-    public List<Contact> getContacts() {
+    public void deleteContact(int index) {
+        this.contacts.remove(index);
+    }
+
+    public List<Contact> listContacts() {
         return contacts;
     }
+
 }
